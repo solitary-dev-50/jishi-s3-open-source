@@ -10,6 +10,14 @@ This is not an official Xiaozhi firmware project, and it does not represent the 
 
 This repository only contains the **device-side basic firmware** for JiShi S3. It does not include the complete JiShi product firmware or the complete JiShi commercial firmware.
 
+## Upstream
+
+This project is based on the open-source Xiaozhi ESP32 firmware:
+
+- https://github.com/78/xiaozhi-esp32
+
+JiShi S3 is an adapted device-side firmware project and is not the original Xiaozhi project.
+
 ## Project Scope
 
 - Only keeps the `jishi-s3` board entry
@@ -145,6 +153,14 @@ Third-party components, ESP-IDF components, managed components, and the original
 ## 开源基础版说明
 
 本仓库只包含 JiShi S3 的**设备端固件基础版**，不包含完整 JiShi 产品固件，也不包含完整 JiShi 商业版固件。
+
+## 上游来源
+
+本项目基于小智开源 ESP32 固件改造：
+
+- https://github.com/78/xiaozhi-esp32
+
+JiShi S3 是基于该上游项目改造的设备端固件项目，不是小智原始项目。
 
 ## 项目定位
 
