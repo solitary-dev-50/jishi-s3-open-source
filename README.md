@@ -10,17 +10,6 @@ This is not an official Xiaozhi firmware project, and it does not represent the 
 
 This repository only contains the **device-side basic firmware** for JiShi S3. It does not include the complete JiShi product firmware or the complete JiShi commercial firmware.
 
-This repository **does not include**:
-
-- complete sound source localization and tracking strategy
-- wake-up head-turning strategy
-- gimbal motion rhythm and behavior strategy
-- child companion strategy
-- long-term memory system
-- commercial delivery materials
-- private prompts
-- private server configuration
-
 ## Project Scope
 
 - Only keeps the `jishi-s3` board entry
@@ -53,6 +42,35 @@ Main hardware configuration files:
 - Basic OV5640-AF photo capture
 - Basic servo control
 - LED status feedback
+
+## Commercial Firmware Capabilities
+
+The full JiShi commercial firmware is designed for a more complete interactive companion device experience, including:
+
+- Looking toward the speaker after wake-up
+- Light speaker-following behavior during conversation
+- More natural gimbal motion rhythm and idle behavior
+- Child-friendly companion interaction design
+- Long-term memory and growth record support
+- Camera-based visual interaction scenarios
+- More complete device behavior orchestration and diagnostics
+
+These capabilities are not included in this open-source basic firmware. This repository only provides the basic device-side firmware for hardware adaptation, protocol compatibility, and developer testing.
+
+JiShi's commercial firmware focuses on turning the device from a basic voice terminal into a productized companion runtime with behavior orchestration, offline fallback, visual interaction, and child-friendly interaction design.
+
+## What Is Not Included
+
+This repository **does not include**:
+
+- complete sound source localization and tracking strategy
+- wake-up head-turning strategy
+- gimbal motion rhythm and behavior strategy
+- child companion strategy
+- long-term memory system
+- commercial delivery materials
+- private prompts
+- private server configuration
 
 ## Camera Notes
 
@@ -104,6 +122,10 @@ Replace `COM21` with the actual serial port:
 idf.py -B build-jishi-s3-open -p COM21 flash monitor
 ```
 
+## Support
+
+Support the open-source basic firmware: https://ko-fi.com/solitarydev50
+
 ## Open Source Notice
 
 This project keeps the original open-source project license file. See `LICENSE`.
@@ -123,17 +145,6 @@ Third-party components, ESP-IDF components, managed components, and the original
 ## 开源基础版说明
 
 本仓库只包含 JiShi S3 的**设备端固件基础版**，不包含完整 JiShi 产品固件，也不包含完整 JiShi 商业版固件。
-
-本仓库**不包含**以下内容：
-
-- 完整声源定位跟随策略
-- 唤醒转头策略
-- 云台动作节奏和交互动作策略
-- 儿童陪伴策略
-- 长期记忆系统
-- 商业交付材料
-- 私有提示词
-- 私有服务器配置
 
 ## 项目定位
 
@@ -167,6 +178,35 @@ Third-party components, ESP-IDF components, managed components, and the original
 - OV5640-AF 基础拍照
 - 舵机基础控制
 - LED 状态反馈
+
+## 完整商业版能力
+
+完整 JiShi 商业版固件面向更完整的桌面陪伴设备体验，包含：
+
+- 唤醒后看向说话人
+- 对话期间轻微跟随说话方向
+- 更自然的云台动作节奏和待机行为
+- 面向儿童的陪伴式交互设计
+- 长期记忆和成长记录支持
+- 基于摄像头的视觉交互场景
+- 更完整的设备行为编排和诊断能力
+
+以上能力不包含在本开源基础版中。本仓库只提供基础设备端固件，用于硬件适配、协议兼容和开发者测试。
+
+JiShi 商业版固件的重点，是把设备从普通语音终端，升级为具备行为编排、离线降级、视觉交互和儿童友好交互设计的产品化陪伴终端。
+
+## 不包含内容
+
+本仓库**不包含**以下内容：
+
+- 完整声源定位跟随策略
+- 唤醒转头策略
+- 云台动作节奏和交互动作策略
+- 儿童陪伴策略
+- 长期记忆系统
+- 商业交付材料
+- 私有提示词
+- 私有服务器配置
 
 ## 摄像头说明
 
@@ -218,8 +258,13 @@ idf.py -B build-jishi-s3-open build
 idf.py -B build-jishi-s3-open -p COM21 flash monitor
 ```
 
+## 支持作者
+
+支持开源基础版固件维护：https://afdian.com/a/solitary-dev-50
+
 ## 开源说明
 
 本项目保留原开源项目许可证文件，详见 `LICENSE`。
 
 第三方组件、ESP-IDF 组件、托管组件以及小智原始开源固件分别遵守其自身许可证。
+
