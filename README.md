@@ -1,4 +1,120 @@
+# JiShi S3 Open Source Firmware
+
+Language: English | [中文](#jishi-s3-开源基础版固件)
+
+This project is the **open-source basic version of the JiShi S3 device-side firmware**, based on the open-source Xiaozhi ESP32 firmware.
+
+This is not an official Xiaozhi firmware project, and it does not represent the official Xiaozhi device-side firmware. JiShi S3 keeps the basic hardware adaptation, protocol compatibility, and build flow required for the JiShi S3 board on top of the Xiaozhi open-source firmware.
+
+## Open Source Basic Version
+
+This repository only contains the **device-side basic firmware** for JiShi S3. It does not include the complete JiShi product firmware or the complete JiShi commercial firmware.
+
+This repository **does not include**:
+
+- complete sound source localization and tracking strategy
+- wake-up head-turning strategy
+- gimbal motion rhythm and behavior strategy
+- child companion strategy
+- long-term memory system
+- commercial delivery materials
+- private prompts
+- private server configuration
+
+## Project Scope
+
+- Only keeps the `jishi-s3` board entry
+- Target chip: `esp32s3`
+- Only contains device-side firmware
+- Compatible with Xiaozhi-compatible backend protocols, but does not include backend services
+
+## Basic Hardware Adaptation
+
+- MCU: ESP32-S3
+- Microphone chain: TLV320ADC5140 to I2S
+- Speaker chain: MAX98357A I2S
+- Display: SSD1306 OLED
+- Camera: OV5640-AF
+- Servo: basic dual-axis gimbal control
+- Status LED: WS2812 LED strip
+
+Main hardware configuration files:
+
+- `main/boards/jishi-s3/config.h`
+- `main/boards/jishi-s3/config.json`
+
+## Included Basic Capabilities
+
+- Wi-Fi provisioning and networking
+- Offline wake word detection
+- Opus audio input and output
+- WebSocket voice communication
+- OLED status display
+- Basic OV5640-AF photo capture
+- Basic servo control
+- LED status feedback
+
+## Camera Notes
+
+The camera currently used and tested is `OV5640-AF`.
+
+In theory, `OV2640` may be used as an alternative, but this repository has not fully tested `OV2640` as a drop-in replacement.
+
+## Backend Compatibility
+
+This firmware can connect to a backend that implements a Xiaozhi-compatible WebSocket protocol.
+
+Reference open-source backend:
+
+- `xinnan-tech/xiaozhi-esp32-server`
+
+This repository only contains device-side firmware and does not include backend services.
+
+## Directory Structure
+
+- `main/`: main firmware source code
+- `main/boards/jishi-s3/`: JiShi S3 board adaptation
+- `main/boards/common/`: shared basic board components
+- `partitions/`: partition tables
+- `scripts/`: build helper scripts
+- `sdkconfig`: current project configuration
+- `sdkconfig.defaults`: common default configuration
+- `sdkconfig.defaults.esp32s3`: ESP32-S3 default configuration
+
+## Build Environment
+
+Recommended environment:
+
+- ESP-IDF 5.5.x
+- Python 3.11
+- ESP32-S3 target
+- Windows PowerShell or ESP-IDF terminal
+
+Build command:
+
+```powershell
+idf.py -B build-jishi-s3-open build
+```
+
+## Flashing
+
+Replace `COM21` with the actual serial port:
+
+```powershell
+idf.py -B build-jishi-s3-open -p COM21 flash monitor
+```
+
+## Open Source Notice
+
+This project keeps the original open-source project license file. See `LICENSE`.
+
+Third-party components, ESP-IDF components, managed components, and the original Xiaozhi open-source firmware follow their respective licenses.
+
+---
+
 # JiShi S3 开源基础版固件
+
+语言：[English](#jishi-s3-open-source-firmware) | 中文
 
 本项目是**基于小智开源 ESP32 固件改造的 JiShi S3 开源基础版固件**。
 
@@ -6,13 +122,13 @@
 
 ## 开源基础版说明
 
-本仓库只包含 JiShi S3 的**设备端固件基础版**，不包含完整 JiShi 产品形态。
+本仓库只包含 JiShi S3 的**设备端固件基础版**，不包含完整 JiShi 产品固件，也不包含完整 JiShi 商业版固件。
 
 本仓库**不包含**以下内容：
 
 - 完整声源定位跟随策略
 - 唤醒转头策略
-- 云台动作节奏和交互动作编排
+- 云台动作节奏和交互动作策略
 - 儿童陪伴策略
 - 长期记忆系统
 - 商业交付材料
@@ -41,7 +157,7 @@
 - `main/boards/jishi-s3/config.h`
 - `main/boards/jishi-s3/config.json`
 
-## 当前保留能力
+## 当前保留基础能力
 
 - Wi-Fi 配网和联网
 - 离线唤醒词检测
@@ -106,4 +222,4 @@ idf.py -B build-jishi-s3-open -p COM21 flash monitor
 
 本项目保留原开源项目许可证文件，详见 `LICENSE`。
 
-第三方组件、ESP-IDF 组件和托管组件分别遵守其自身许可证。
+第三方组件、ESP-IDF 组件、托管组件以及小智原始开源固件分别遵守其自身许可证。
