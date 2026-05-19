@@ -1,0 +1,13 @@
+build*/
+managed_components/
+.cache/
+.vscode/
+*.log
+*.bin
+*.elf
+*.map
+*.zip
+*.7z
+*.bak
+*.tmp
+sdkconfig.old
